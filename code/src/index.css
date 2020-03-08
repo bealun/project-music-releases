@@ -22,19 +22,112 @@ code {
   max-width: 25%;
   margin-bottom: 20px;
   padding: 10px;
+  z-index: 0;
+  position: relative;
 }
 
 .card img {
   width: 300px;
   height: 300px;
   object-fit: cover;
+  z-index: 1; 
+  transition: all 0.4s ease-in-out;
+}
+
+/* .card:hover {
+  filter: brightness(40%);
+} */
+
+.card:hover .icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 1;
+  top:115px;
+  left:50px;
+  position: absolute;
+  filter: brightness(100%)
 }
 
 .everyCard {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-width: 90%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.icons {
+  display: none;
+}
+
+.icons img {
+  width: 40px;
+  height: 40px;
+}
+
+.icons .play {
+  width: 80px;
+  height: 80px;
+  margin: 0 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.icons .play:hover {
+  transform: scale(1.1);
+}
+
+.album-image:hover {
+  filter: brightness(40%);
+}
+
+.image-icon:hover {
+  filter: brightness(100%);
+}
+
+.image-icon:hover .album-image::after {
+  filter: brightness(40%);
+}
+
+/* .album-image:hover {
+  filter: brightness(40%);
+} */
+
+a {
+  text-decoration: none;
+  width: 300px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.artist,
+.title {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-family: Helvetica;
+  font-size: 14px;
+  text-transform: capitalize;
+  line-height: 25px;
+}
+
+.title {
+  font-weight: bold;
+  color: white;
+}
+
+.artist:hover,
+.title:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 50%;
+  }
 }
