@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 export const Album = (props) => {
   console.log(props)
   return (
@@ -13,10 +14,13 @@ export const Album = (props) => {
         </div>
         <img className="album-image" src={props.image} alt="artist"></img>
       </div>
-      <a href={props.link}>
+      <a href={props.albumlink}>
         <div className="title">{props.title}</div>
+      </a>
+      <a href={props.artistLink}>
         <div className="artist">{props.artistName}</div>
       </a>
+      
     </section>
   )
 }
