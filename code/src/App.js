@@ -9,12 +9,11 @@ export const App = () => {
   return (
     <div>
       <Header />
-  
-  <div className="everyCard">
-    {data.albums.items.map((album) => {
+    <div className="everyCard">
+      {data.albums.items.map((album) => {
       return (< Album key={album.artists[0].name}
         image={album.images[1].url}
-        artistName={album.artists[0].name}
+        artistName={album.artists}
         title={album.name}
         albumLink={album.external_urls.spotify} 
         artistLink={album.artists[0].external_urls.spotify}

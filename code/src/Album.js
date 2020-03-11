@@ -18,7 +18,10 @@ export const Album = (props) => {
         <div className="title">{props.title}</div>
       </a>
       <a href={props.artistLink}>
-        <div className="artist">{props.artistName}</div>
+        <div className="artist">{props.artistName.map((artist) => {
+          return <span className="space" key={artist.id}>  {artist.name} </span>
+        }
+        )}</div>
       </a>
       
     </section>
